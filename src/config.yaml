@@ -1,0 +1,8 @@
+weather:
+   url: http://api.weatherapi.com/v1/current.json
+   key: 162709ae4bc541fca51220712221407
+   q: "{lat},{long}"
+   field_temp_c: "temp_c" 
+   field_temp_f: "temp_f"
+   field_humidity: "humidity"
+   ttl: 60  # seconds

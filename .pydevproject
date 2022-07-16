@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse-pydev version="1.0"?><pydev_project>
+        
+    <pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
+                
+        <path>/${PROJECT_DIR_NAME}</path>
+            
+    </pydev_pathproperty>
+        
+    <pydev_property name="org.python.pydev.PYTHON_PROJECT_VERSION">python 3.8</pydev_property>
+        
+    <pydev_property name="org.python.pydev.PYTHON_PROJECT_INTERPRETER">Default</pydev_property>
+    
+    <pydev_pathproperty name="org.python.pydev.PROJECT_EXTERNAL_SOURCE_PATH">
+        <path>${PYQT5_HOMEBREW}</path>
+    </pydev_pathproperty>
+    <pydev_variables_property name="org.python.pydev.PROJECT_VARIABLE_SUBSTITUTION">
+        <key>PYQT5_HOMEBREW</key>
+        <value>/opt/homebrew/Cellar/pyqt@5/5.15.7_1/lib/python3.9/site-packages/</value>
+    </pydev_variables_property>
+</pydev_project>
