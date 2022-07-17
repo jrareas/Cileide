@@ -108,12 +108,12 @@ class MainWindow(QObject):
         self.textHumidity.emit(humidity)
 
     @pyqtSlot(str)
-    def textHumidityInUpdate(self, temp_c_in):
-        self.textHumidityIn.emit(temp_c_in)
+    def textHumidityInUpdate(self, humidity_in):
+        self.textHumidityIn.emit(humidity_in)
         
     @pyqtSlot(int)
-    def textTempCInUpdate(self, humidity_in):
-        self.textTempCIn.emit(humidity_in)
+    def textTempCInUpdate(self, temp_c_in):
+        self.textTempCIn.emit(temp_c_in)
 
     @pyqtSlot() 
     def settings_clicked(self):

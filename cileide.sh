@@ -5,6 +5,7 @@
 #export DISPLAY=:1.0
 #export QT_QPA_PLATFORM=minimal
 #export QT_QPA_PLATFORM_PLUGIN_PATH=/usr/lib/plugins/platforms
+echo shtc1 0x70 > /sys/bus/i2c/devices/i2c-1/new_device
 export QT_QPA_PLATFORM=wayland
 
 
