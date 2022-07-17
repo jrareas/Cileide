@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import QApplication
 from PyQt5.QtQml import QQmlApplicationEngine
 from geoip import GeoIp
 from weather import Weather
+from sensor import Sensors
 from PyQt5.QtCore import pyqtSignal, pyqtSlot, QObject,QTimer, QModelIndex
 
 
@@ -23,6 +24,8 @@ class MainWindow(QObject):
     imgConditionSource = pyqtSignal(str, arguments=['source'])
     settingsClicked = pyqtSignal(str, arguments=['source'])
     textHumidity = pyqtSignal(int, arguments=['humidity'])
+    textHumidityIn = pyqtSignal(int, arguments=['humidity_in'])
+    textTempCIn = pyqtSignal(float, arguments=['temp_c_in'])
     
     def __init__(self, app):
         self.app = app
@@ -34,6 +37,7 @@ class MainWindow(QObject):
         self.engine.load(f'{UI_FOLDER}/Cileide.qml')
         self.geoip = GeoIp()
         self.weather = Weather(self.geoip)
+        self.sensors = Sensors()
         self.textCityUpdate(self.geoip.get_my_city())
         self.textProvinceUpdate(self.geoip.get_my_province())
         self.refresh_data()
@@ -103,6 +107,14 @@ class MainWindow(QObject):
     def textHumidityUpdate(self, humidity):
         self.textHumidity.emit(humidity)
 
+    @pyqtSlot(str)
+    def textHumidityInUpdate(self, temp_c_in):
+        self.textHumidityIn.emit(temp_c_in)
+        
+    @pyqtSlot(int)
+    def textTempCInUpdate(self, humidity_in):
+        self.textTempCIn.emit(humidity_in)
+
     @pyqtSlot() 
     def settings_clicked(self):
         print("clicked")    
@@ -111,4 +123,6 @@ class MainWindow(QObject):
         self.textTempCUpdate(self.weather.temp_c)
         self.textHumidityUpdate(self.weather.humidity)
         self.imgConditionSourceUpdate(self.weather.condition_source_image)
+        self.textHumidityInUpdate(self.sensors.humidity)
+        self.textTempCInUpdate(self.sensors.temp_c)
         

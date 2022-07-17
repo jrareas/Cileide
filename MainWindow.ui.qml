@@ -146,10 +146,10 @@ Rectangle {
                     hum_id.text = humidity
                 }
                 function onTextHumidityIn(humidity_in) {
-                    temp_c_in_id.text = humidity
+                    temp_c_in_id.text = humidity_in
                 }
                 function onTextTempCIn(temp_c_in) {
-                    hum_in_id.text = humidity
+                    hum_in_id.text = temp_c_in
                 }
             }
 
@@ -427,6 +427,7 @@ Rectangle {
         y: 0
         width: 600
         height: 450
+        visible: false
         color: "#ffffff"
 
         Rectangle {
