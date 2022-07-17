@@ -31,7 +31,6 @@ class GeoIp:
     def get_by_ip(self, ip):
         with geoip2.database.Reader(self.db_path) as reader:
             response = reader.city(ip)
-            print (f'My IP info:{response}')
         return response
     
     def _get_mine(self):
@@ -49,8 +48,3 @@ class GeoIp:
     
     def get_my_province(self):
         return self.mine.subdivisions[0].iso_code
-            
-gp = GeoIp()
-data = gp.mine
-data = gp.get_my_location()
-print(data)
