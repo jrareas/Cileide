@@ -454,7 +454,7 @@ Rectangle {
 
 /*##^##
 Designer {
-    D{i:0}D{i:13}D{i:14}D{i:16}D{i:17}D{i:18}D{i:19}D{i:21}D{i:29;invisible:true}
+    D{i:0}D{i:13}D{i:14}D{i:16}D{i:17}D{i:18}D{i:19}D{i:21}D{i:38;invisible:true}
 }
 ##^##*/
 
