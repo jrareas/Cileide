@@ -8,6 +8,7 @@ Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on
 */
 import QtQuick 2.15
 import Constants 1.0
+import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15
 
 Rectangle {
@@ -89,7 +90,7 @@ Rectangle {
             Text {
                 id: city_id
                 x: 39
-                y: 218
+                y: 223
                 width: 60
                 color: "#810505"
                 text: qsTr("city")
@@ -102,7 +103,7 @@ Rectangle {
             Text {
                 id: province_id
                 x: 168
-                y: 218
+                y: 223
                 width: 20
                 color: "#810505"
                 text: qsTr("pr")
@@ -197,7 +198,7 @@ Rectangle {
 
                 Text {
                     id: temp_c_in_id
-                    x: 90
+                    x: 113
                     y: 15
                     width: 30
                     color: "#31643c"
@@ -210,7 +211,7 @@ Rectangle {
 
                 Text {
                     id: hum_in_id
-                    x: 107
+                    x: 130
                     y: 50
                     width: 20
                     color: "#31643c"
@@ -223,7 +224,7 @@ Rectangle {
 
                 Text {
                     id: hum_signal_in_id
-                    x: 150
+                    x: 173
                     y: 50
                     color: "#31643c"
                     text: "%"
@@ -235,7 +236,7 @@ Rectangle {
 
                 Text {
                     id: temp_c_type2
-                    x: 148
+                    x: 171
                     y: 15
                     color: "#31643c"
                     text: "⁰C"
@@ -259,7 +260,7 @@ Rectangle {
             Text {
                 id: province_id1
                 x: 133
-                y: 218
+                y: 223
                 width: 10
                 color: "#810505"
                 text: qsTr(",")
@@ -348,7 +349,7 @@ Rectangle {
     }
 
     Rectangle {
-        id: rectangle4
+        id: rect_main
         x: 0
         y: 0
         width: 600
@@ -419,4 +420,41 @@ Rectangle {
             height: 450
         }
     }
+
+    Rectangle {
+        id: rect_settings
+        x: 0
+        y: 0
+        width: 600
+        height: 450
+        color: "#ffffff"
+
+        Rectangle {
+            id: rectangle4
+            x: 0
+            y: 0
+            width: 600
+            height: 80
+            color: "#ffffff"
+
+            Button {
+                id: btn_network
+                x: 24
+                y: 24
+                width: 81
+                height: 38
+                text: qsTr("Network")
+                checked: false
+                checkable: true
+                highlighted: true
+            }
+        }
+    }
 }
+
+/*##^##
+Designer {
+    D{i:0}D{i:13}D{i:14}D{i:16}D{i:17}D{i:18}D{i:19}D{i:21}D{i:29;invisible:true}
+}
+##^##*/
+
