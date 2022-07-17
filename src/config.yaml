@@ -6,3 +6,5 @@ weather:
    field_temp_f: "temp_f"
    field_humidity: "humidity"
    ttl: 60  # seconds
+sensor:
+    temp_hum_sensor: "shtc1"

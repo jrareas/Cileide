@@ -211,9 +211,9 @@ Rectangle {
 
                 Text {
                     id: hum_in_id
-                    x: 130
+                    x: 113
                     y: 50
-                    width: 20
+                    width: 30
                     color: "#31643c"
                     text: qsTr("-47")
                     elide: Text.ElideNone
@@ -224,8 +224,9 @@ Rectangle {
 
                 Text {
                     id: hum_signal_in_id
-                    x: 173
+                    x: 171
                     y: 50
+                    width: 10
                     color: "#31643c"
                     text: "%"
                     elide: Text.ElideNone
