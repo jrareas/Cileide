@@ -31,7 +31,7 @@ Rectangle {
             x: 0
             y: 0
             width: 200
-            height: 250
+            height: 270
             color: "#e8e8e8"
 
             Text {
@@ -90,7 +90,7 @@ Rectangle {
             Text {
                 id: city_id
                 x: 39
-                y: 223
+                y: 238
                 width: 60
                 color: "#810505"
                 text: qsTr("city")
@@ -103,7 +103,7 @@ Rectangle {
             Text {
                 id: province_id
                 x: 168
-                y: 223
+                y: 238
                 width: 20
                 color: "#810505"
                 text: qsTr("pr")
@@ -193,7 +193,7 @@ Rectangle {
                 x: 0
                 y: 135
                 width: 200
-                height: 76
+                height: 88
                 color: "#d1c9c9"
 
                 Text {
@@ -204,7 +204,7 @@ Rectangle {
                     color: "#31643c"
                     text: qsTr("-470")
                     elide: Text.ElideNone
-                    font.pixelSize: 9
+                    font.pixelSize: 12
                     horizontalAlignment: Text.AlignRight
                     scale: 2.19
                 }
@@ -212,12 +212,12 @@ Rectangle {
                 Text {
                     id: hum_in_id
                     x: 113
-                    y: 50
+                    y: 55
                     width: 30
                     color: "#31643c"
                     text: qsTr("-47")
                     elide: Text.ElideNone
-                    font.pixelSize: 9
+                    font.pixelSize: 12
                     horizontalAlignment: Text.AlignRight
                     scale: 2.19
                 }
@@ -225,12 +225,12 @@ Rectangle {
                 Text {
                     id: hum_signal_in_id
                     x: 171
-                    y: 50
+                    y: 55
                     width: 10
                     color: "#31643c"
                     text: "%"
                     elide: Text.ElideNone
-                    font.pixelSize: 9
+                    font.pixelSize: 12
                     horizontalAlignment: Text.AlignRight
                     scale: 2.19
                 }
@@ -242,17 +242,17 @@ Rectangle {
                     color: "#31643c"
                     text: "⁰C"
                     elide: Text.ElideNone
-                    font.pixelSize: 9
+                    font.pixelSize: 12
                     horizontalAlignment: Text.AlignRight
                     scale: 2.19
                 }
 
                 Image {
                     id: image2
-                    x: 23
-                    y: 0
-                    width: 66
-                    height: 76
+                    x: 0
+                    y: 3
+                    width: 74
+                    height: 85
                     source: "images/indoor.png"
                     fillMode: Image.PreserveAspectFit
                 }
@@ -261,7 +261,7 @@ Rectangle {
             Text {
                 id: province_id1
                 x: 133
-                y: 223
+                y: 238
                 width: 10
                 color: "#810505"
                 text: qsTr(",")
@@ -275,9 +275,9 @@ Rectangle {
         Rectangle {
             id: rectangle3
             x: 0
-            y: 250
+            y: 270
             width: 200
-            height: 200
+            height: 180
             color: "#151212"
 
             Text {
@@ -288,16 +288,16 @@ Rectangle {
                 height: 44
                 color: "#ffffff"
                 text: qsTr("00:00")
-                font.pixelSize: 36
+                font.pixelSize: 34
                 horizontalAlignment: Text.AlignHCenter
                 font.bold: true
             }
 
             Text {
                 id: weekday_id
-                x: 83
-                y: 90
-                width: 200
+                x: 94
+                y: 72
+                width: 180
                 height: 37
                 color: "#ffffff"
                 text: qsTr("Monday")
@@ -308,9 +308,9 @@ Rectangle {
 
             Text {
                 id: month_id
-                x: -78
-                y: 86
-                width: 200
+                x: -66
+                y: 68
+                width: 180
                 height: 44
                 color: "#ffffff"
                 text: qsTr("January")
@@ -327,14 +327,14 @@ Rectangle {
                 height: 44
                 color: "#ffffff"
                 text: qsTr("26")
-                font.pixelSize: 36
+                font.pixelSize: 34
                 horizontalAlignment: Text.AlignHCenter
             }
 
             Text {
                 id: year_id
-                x: 2
-                y: 157
+                x: 0
+                y: 135
                 width: 200
                 height: 44
                 color: "#ffffff"
