@@ -37,7 +37,7 @@ Rectangle {
             Text {
                 id: temp_c_id
                 x: 18
-                y: 105
+                y: 119
                 width: 30
                 color: "#1e36b0"
                 text: qsTr("-47")
@@ -78,7 +78,7 @@ Rectangle {
             Text {
                 id: temp_c_type
                 x: 73
-                y: 105
+                y: 119
                 color: "#1e36b0"
                 text: "⁰C"
                 elide: Text.ElideNone
@@ -90,7 +90,7 @@ Rectangle {
             Text {
                 id: city_id
                 x: 39
-                y: 238
+                y: 243
                 width: 60
                 color: "#810505"
                 text: qsTr("city")
@@ -103,7 +103,7 @@ Rectangle {
             Text {
                 id: province_id
                 x: 168
-                y: 238
+                y: 243
                 width: 20
                 color: "#810505"
                 text: qsTr("pr")
@@ -157,16 +157,16 @@ Rectangle {
                 id: condition_id
                 x: -4
                 y: 15
-                width: 127
-                height: 101
-                source: "https://cdn.weatherapi.com/weather/64x64/night/113.png"
+                width: 125
+                height: 90
+                source: "https://cdn.weatherapi.com/weather/64x64/day/296.png"
                 fillMode: Image.PreserveAspectFit
             }
 
             Text {
                 id: hum_signal_id
                 x: 172
-                y: 105
+                y: 119
                 color: "#1e36b0"
                 text: "%"
                 elide: Text.ElideNone
@@ -178,7 +178,7 @@ Rectangle {
             Text {
                 id: hum_id
                 x: 117
-                y: 105
+                y: 119
                 width: 30
                 color: "#1e36b0"
                 text: qsTr("-47")
@@ -191,7 +191,7 @@ Rectangle {
             Rectangle {
                 id: rectangle5
                 x: 0
-                y: 135
+                y: 144
                 width: 200
                 height: 88
                 color: "#d1c9c9"
@@ -261,7 +261,7 @@ Rectangle {
             Text {
                 id: province_id1
                 x: 133
-                y: 238
+                y: 243
                 width: 10
                 color: "#810505"
                 text: qsTr(",")
@@ -347,6 +347,11 @@ Rectangle {
 
     Item {
         id: __materialLibrary__
+
+        DefaultMaterial {
+            id: newMaterial
+            objectName: "New Material"
+        }
     }
 
     Rectangle {
@@ -420,6 +425,16 @@ Rectangle {
             width: 200
             height: 450
         }
+
+        Text {
+            id: text1
+            x: 206
+            y: 168
+            width: 79
+            height: 40
+            text: qsTr("")
+            font.pixelSize: 12
+        }
     }
 
     Rectangle {
@@ -456,7 +471,7 @@ Rectangle {
 
 /*##^##
 Designer {
-    D{i:0}D{i:13}D{i:14}D{i:16}D{i:17}D{i:18}D{i:19}D{i:21}D{i:38;invisible:true}
+    D{i:0}D{i:13}D{i:14}D{i:16}D{i:17}D{i:18}D{i:19}D{i:21}D{i:40;invisible:true}
 }
 ##^##*/
 
