@@ -19,10 +19,12 @@ class Sensors:
             print(f"Could not install sensor with id: '{sensor_id}'")
         
     def check_or_install_sensor(self):
-        sensor_data = self.sensor_hw.data()
-        if not sensor_data.get(self.temp_humid_sensor.get('name'), {}):
-            self.install_sensor(self.temp_humid_sensor)
-                    
+        try:
+            sensor_data = self.sensor_hw.data()
+            if not sensor_data.get(self.temp_humid_sensor.get('name'), {}):
+                self.install_sensor(self.temp_humid_sensor)
+        except Exception as e:
+            print(f"Could not install sensor: {e}")
         
     @property
     def humidity(self):
