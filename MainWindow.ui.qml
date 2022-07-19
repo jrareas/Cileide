@@ -159,7 +159,7 @@ Rectangle {
                 y: 15
                 width: 125
                 height: 90
-                source: "https://cdn.weatherapi.com/weather/64x64/day/296.png"
+                source: "https://cdn.weatherapi.com/weather/64x64/day/176.png"
                 fillMode: Image.PreserveAspectFit
             }
 
@@ -342,15 +342,6 @@ Rectangle {
                 font.pixelSize: 36
                 horizontalAlignment: Text.AlignHCenter
             }
-        }
-    }
-
-    Item {
-        id: __materialLibrary__
-
-        DefaultMaterial {
-            id: newMaterial
-            objectName: "New Material"
         }
     }
 
