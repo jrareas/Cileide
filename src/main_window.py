@@ -26,6 +26,7 @@ class MainWindow(QObject):
     textHumidity = pyqtSignal(int, arguments=['humidity'])
     textHumidityIn = pyqtSignal(int, arguments=['humidity_in'])
     textTempCIn = pyqtSignal(float, arguments=['temp_c_in'])
+    textWindSpeed = pyqtSignal(float, arguments=['wind_speed'])
     
     def __init__(self, app):
         self.app = app
@@ -67,6 +68,10 @@ class MainWindow(QObject):
         self.textMonthUpdate(now.strftime("%B"))
         self.textYearUpdate(now.strftime("%Y"))
    
+    @pyqtSlot(float)
+    def textWindSpeedUpdate(self, wind_speed):
+        self.textWindSpeed.emit(wind_speed)
+
     @pyqtSlot(str)
     def imgConditionSourceUpdate(self, source):
         self.imgConditionSource.emit(source) 
@@ -125,4 +130,5 @@ class MainWindow(QObject):
         self.imgConditionSourceUpdate(self.weather.condition_source_image)
         self.textHumidityInUpdate(self.sensors.humidity)
         self.textTempCInUpdate(self.sensors.temp_c)
+        self.textWindSpeedUpdate(self.weather.wind_speed)
         

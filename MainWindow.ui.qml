@@ -31,7 +31,7 @@ Rectangle {
             x: 0
             y: 0
             width: 200
-            height: 270
+            height: 293
             color: "#e8e8e8"
 
             Text {
@@ -50,7 +50,7 @@ Rectangle {
             Button {
                 id: btn_close
                 x: 129
-                y: 15
+                y: 5
                 width: 63
                 height: 54
                 text: qsTr("")
@@ -90,7 +90,7 @@ Rectangle {
             Text {
                 id: city_id
                 x: 39
-                y: 243
+                y: 270
                 width: 60
                 color: "#810505"
                 text: qsTr("city")
@@ -103,7 +103,7 @@ Rectangle {
             Text {
                 id: province_id
                 x: 168
-                y: 243
+                y: 270
                 width: 20
                 color: "#810505"
                 text: qsTr("pr")
@@ -151,6 +151,9 @@ Rectangle {
                 function onTextTempCIn(temp_c_in) {
                     temp_c_in_id.text = temp_c_in
                 }
+                function onTextWindSpeed(wind_speed) {
+                    wind_speed_id.text = wind_speed
+                }
             }
 
             Image {
@@ -193,7 +196,7 @@ Rectangle {
                 x: 0
                 y: 144
                 width: 200
-                height: 88
+                height: 80
                 color: "#d1c9c9"
 
                 Text {
@@ -250,10 +253,10 @@ Rectangle {
                 Image {
                     id: image2
                     x: 0
-                    y: 3
+                    y: 0
                     width: 74
-                    height: 85
-                    source: "images/indoor.png"
+                    height: 80
+                    source: "src/pictures/indoor.png"
                     fillMode: Image.PreserveAspectFit
                 }
             }
@@ -261,7 +264,7 @@ Rectangle {
             Text {
                 id: province_id1
                 x: 133
-                y: 243
+                y: 270
                 width: 10
                 color: "#810505"
                 text: qsTr(",")
@@ -270,14 +273,56 @@ Rectangle {
                 horizontalAlignment: Text.AlignHCenter
                 scale: 2.19
             }
+
+            Rectangle {
+                id: rectangle6
+                x: 0
+                y: 224
+                width: 200
+                height: 35
+                color: "#ffffff"
+
+                Image {
+                    id: image3
+                    x: 0
+                    y: 0
+                    width: 71
+                    height: 35
+                    source: "src/pictures/wind.png"
+                    fillMode: Image.PreserveAspectFit
+                }
+
+                Text {
+                    id: wind_speed_id
+                    x: 66
+                    y: 3
+                    width: 76
+                    height: 29
+                    color: "#262323"
+                    text: qsTr("100.5")
+                    font.pixelSize: 24
+                    horizontalAlignment: Text.AlignRight
+                }
+
+                Text {
+                    id: text3
+                    x: 150
+                    y: 10
+                    width: 50
+                    color: "#ef0505"
+                    text: qsTr("Kph")
+                    font.pixelSize: 16
+                    horizontalAlignment: Text.AlignLeft
+                }
+            }
         }
 
         Rectangle {
             id: rectangle3
             x: 0
-            y: 270
+            y: 294
             width: 200
-            height: 180
+            height: 156
             color: "#151212"
 
             Text {
@@ -288,16 +333,16 @@ Rectangle {
                 height: 44
                 color: "#ffffff"
                 text: qsTr("00:00")
-                font.pixelSize: 34
+                font.pixelSize: 30
                 horizontalAlignment: Text.AlignHCenter
                 font.bold: true
             }
 
             Text {
                 id: weekday_id
-                x: 94
-                y: 72
-                width: 180
+                x: 104
+                y: 60
+                width: 156
                 height: 37
                 color: "#ffffff"
                 text: qsTr("Monday")
@@ -308,13 +353,13 @@ Rectangle {
 
             Text {
                 id: month_id
-                x: -66
-                y: 68
-                width: 180
+                x: -56
+                y: 57
+                width: 156
                 height: 44
                 color: "#ffffff"
                 text: qsTr("January")
-                font.pixelSize: 36
+                font.pixelSize: 30
                 horizontalAlignment: Text.AlignHCenter
                 rotation: 270
             }
@@ -322,24 +367,24 @@ Rectangle {
             Text {
                 id: month_day_id
                 x: 0
-                y: 75
+                y: 59
                 width: 200
                 height: 44
                 color: "#ffffff"
                 text: qsTr("26")
-                font.pixelSize: 34
+                font.pixelSize: 30
                 horizontalAlignment: Text.AlignHCenter
             }
 
             Text {
                 id: year_id
                 x: 0
-                y: 135
+                y: 116
                 width: 200
-                height: 44
+                height: 40
                 color: "#ffffff"
                 text: qsTr("2022")
-                font.pixelSize: 36
+                font.pixelSize: 30
                 horizontalAlignment: Text.AlignHCenter
             }
         }
@@ -459,10 +504,3 @@ Rectangle {
         }
     }
 }
-
-/*##^##
-Designer {
-    D{i:0}D{i:13}D{i:14}D{i:16}D{i:17}D{i:18}D{i:19}D{i:21}D{i:40;invisible:true}
-}
-##^##*/
-

@@ -26,6 +26,8 @@ class Weather:
                 self.lastcall = time.time()
                 if response.status_code == 200:
                     self._data = json.loads(response.content)
+                else:
+                    print(f"Failed to get weather: Status code:{response.status_code}")
             except Exception as e:
                 print(f"Failed to get weather: {e}")
             
@@ -47,5 +49,12 @@ class Weather:
     def temp_c(self):
         if current := self.data.get('current'):
             return current.get(self.config.get('field_temp_c'))
+        else:
+            return 0.0
+        
+    @property
+    def wind_speed(self):
+        if current := self.data.get('current'):
+            return current.get(self.config.get('field_wind_speed'))
         else:
             return 0.0

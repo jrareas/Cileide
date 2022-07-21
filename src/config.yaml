@@ -5,6 +5,7 @@ weather:
    field_temp_c: "temp_c" 
    field_temp_f: "temp_f"
    field_humidity: "humidity"
+   field_wind_speed: "wind_kph"
    ttl: 60  # seconds
 sensor:
     temp_hum_sensor: 
