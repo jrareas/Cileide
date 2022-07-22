@@ -13,8 +13,8 @@ import QtQuick.Controls 2.15
 
 Rectangle {
     id: rectangle
-    width: 800
-    height: 450
+    width: Constants.width
+    height: Constants.height
     color: "#f8f8f8"
     border.color: "#ffffff"
 
@@ -386,120 +386,6 @@ Rectangle {
                 text: qsTr("2022")
                 font.pixelSize: 30
                 horizontalAlignment: Text.AlignHCenter
-            }
-        }
-    }
-
-    Rectangle {
-        id: rect_main
-        x: 0
-        y: 0
-        width: 600
-        height: 450
-        color: "#ffffff"
-
-        Column {
-            id: column3_id
-            x: 400
-            y: 0
-            width: 200
-            height: 450
-            spacing: 0
-
-            Row {
-                id: row1_id
-                width: 200
-                height: 141
-            }
-
-            Row {
-                id: row2
-                y: 141
-                width: 200
-                height: 160
-            }
-
-            Row {
-                id: c3_row2_id
-                y: 320
-                width: 200
-                height: 141
-
-                Button {
-                    id: btn_settings_id
-                    objectName: "btn_settings_id"
-                    width: 200
-                    height: 141
-                    text: qsTr("")
-                    flat: false
-                    highlighted: false
-                    Image {
-                        id: image1
-                        x: 0
-                        y: 10
-                        width: 200
-                        height: 125
-                        source: "src/pictures/time.png"
-                        fillMode: Image.PreserveAspectFit
-                    }
-                }
-            }
-        }
-
-        Column {
-            id: column2_id
-            x: 200
-            y: 0
-            width: 200
-            height: 450
-        }
-
-        Column {
-            id: column1_id
-            x: 0
-            y: 0
-            width: 200
-            height: 450
-        }
-
-        Text {
-            id: text1
-            x: 206
-            y: 168
-            width: 79
-            height: 40
-            text: qsTr("")
-            font.pixelSize: 12
-        }
-    }
-
-    Rectangle {
-        id: rect_settings
-        x: 0
-        y: 0
-        width: 600
-        height: 450
-        visible: false
-        color: "#ffffff"
-
-        Rectangle {
-            id: rectangle4
-            x: 0
-            y: 0
-            width: 600
-            height: 80
-            color: "#ffffff"
-
-            Button {
-                id: btn_network
-                x: 24
-                y: 24
-                width: 81
-                height: 38
-                text: qsTr("Network")
-                checked: false
-                checkable: true
-                highlighted: true
             }
         }
     }

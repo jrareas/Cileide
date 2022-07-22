@@ -1,13 +1,13 @@
 import os
 from datetime import datetime
-
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtQml import QQmlApplicationEngine
 from geoip import GeoIp
 from weather import Weather
 from sensor import Sensors
 from PyQt5.QtCore import pyqtSignal, pyqtSlot, QObject,QTimer, QModelIndex
-
+from main_panel import MainPanel
+from settings_window import SettingsWindow
 
 UI_FOLDER = f"{os.path.dirname(os.path.realpath(__file__))}/.."
 
@@ -31,6 +31,7 @@ class MainWindow(QObject):
     def __init__(self, app):
         self.app = app
         QObject.__init__(self)
+        self.main_panel = MainPanel(app)
         self.engine = QQmlApplicationEngine()
         self.engine.rootContext().setContextProperty("main", self)
         self.engine.quit.connect(self.app.quit)
@@ -47,9 +48,9 @@ class MainWindow(QObject):
         self.minute_timer = self.get_timer(self.refresh_data, 70000)
         root_list = self.engine.rootObjects()
         if len(root_list) > 0:
-            root = root_list[0]
-            button = root.findChild(QObject,"btn_settings_id")
-            button.clicked.connect(self.settings_clicked)
+            self.root = root_list[0]
+            button = self.root.findChild(QObject,"btn_settings_id")
+            button.clicked.connect(lambda: self.settings_clicked('SettingsWindow'))
         else:
             print("Could not find root")
 
@@ -119,11 +120,24 @@ class MainWindow(QObject):
     @pyqtSlot(int)
     def textTempCInUpdate(self, temp_c_in):
         self.textTempCIn.emit(temp_c_in)
-
-    @pyqtSlot() 
-    def settings_clicked(self):
-        print("clicked")    
     
+    @pyqtSlot() 
+    def settings_clicked(self, component):
+        self.settings_window =  SettingsWindow(self.root, component)
+    
+    @property
+    def settings_window(self):
+        if hasattr(self, "_settings_window"):
+            return self._settings_window
+        
+    @settings_window.setter
+    def settings_window(self, value):
+        if hasattr(self, "_settings_window"):
+            self._settings_window.initial_state()
+        else:
+            self._settings_window = value
+        
+        
     def refresh_data(self):
         self.textTempCUpdate(self.weather.temp_c)
         self.textHumidityUpdate(self.weather.humidity)

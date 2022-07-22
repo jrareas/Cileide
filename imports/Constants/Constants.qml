@@ -4,6 +4,7 @@ import QtQuick 2.15
 QtObject {
     readonly property int width: 800
     readonly property int height: 450
+    readonly property int panel_width: 600
 
 
     readonly property color backgroundColor: "#e8e8e8"

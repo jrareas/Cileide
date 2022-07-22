@@ -5,11 +5,19 @@ import QtQuick.Controls 2.15
 ApplicationWindow {
     flags:  Qt.FramelessWindowHint
     visible: true
-    width: 800
+    width: Constants.width
     height: Constants.height
     StackView {
         anchors.fill: parent
     }
     MainWindow {
+    }
+    MainPanel{
+        visible:true
+        objectName: "MainPanel"
+    }
+    SettingsWindow {
+        visible:false
+        objectName: "SettingsWindow"
     }
 }

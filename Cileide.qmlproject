@@ -43,4 +43,6 @@ Project {
 
     /* Required for deployment */
     targetDirectory: "/opt/Cileide"
+
+    mainUiFile: "MainPanel.ui.qml"
 }
