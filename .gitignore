@@ -1,0 +1,4 @@
+src/GeoLite2-City.mmdb
+*__pycache__*
+*.swp
+*DS_Store
