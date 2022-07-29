@@ -9,11 +9,15 @@ Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import Constants 1.0
+import QtQuick.VirtualKeyboard 2.15
+import "content"
 
 Item {
     id: item1
     width: Constants.panel_width
     height: Constants.height
+    // If enabled, prevents interaction with the text fields
+    property bool handwritingInputPanelActive: false
 
     Column {
         id: column
@@ -47,18 +51,43 @@ Item {
     }
 
     Rectangle {
-        id: rectangle1
-        x: 187
         color: "#ffffff"
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.topMargin: 50
-        TextField {
-            x: 16
-            y: 30
-            placeholderText: qsTr("Enter name")
+        Flickable {
+            id: flickable
+            anchors.fill: parent
+            contentWidth: content.width
+            contentHeight: content.height
+            interactive: contentHeight > height
+            flickableDirection: Flickable.VerticalFlick
+
+            property real scrollMarginVertical: 20
+
+            ScrollBar.vertical: ScrollBar {}
+            MouseArea {
+                id: textEditors
+                width: flickable.width
+                height: textEditors.height + 24
+                onClicked: focus = true
+                Column {
+                    id: rectangle1
+                    x: 187
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.top: parent.top
+                    anchors.bottom: parent.bottom
+                    anchors.topMargin: 50
+                    TextField {
+                        x: 16
+                        y: 30
+                        placeholderText: qsTr("Enter name")
+                    }
+                }
+            }
         }
+    }
+    // Hide the text fields' cursors when fullscreen handwriting is active.
+    MouseArea {
+        anchors.fill: parent
+        visible: handwritingInputPanelActive
     }
 }

@@ -115,11 +115,13 @@ class MainWindow(QObject):
 
     @pyqtSlot(str)
     def textHumidityInUpdate(self, humidity_in):
-        self.textHumidityIn.emit(humidity_in)
+        if humidity_in:
+            self.textHumidityIn.emit(humidity_in)
         
     @pyqtSlot(int)
     def textTempCInUpdate(self, temp_c_in):
-        self.textTempCIn.emit(temp_c_in)
+        if temp_c_in:
+            self.textTempCIn.emit(temp_c_in)
     
     @pyqtSlot() 
     def settings_clicked(self, component):
@@ -145,4 +147,3 @@ class MainWindow(QObject):
         self.textHumidityInUpdate(self.sensors.humidity)
         self.textTempCInUpdate(self.sensors.temp_c)
         self.textWindSpeedUpdate(self.weather.wind_speed)
-        

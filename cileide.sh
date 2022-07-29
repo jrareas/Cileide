@@ -16,4 +16,6 @@ export MESA_GL_VERSION_OVERRIDE=4.6
 export QT_PLUGIN_PATH=/usr/lib/plugins
 export QT_QPA_FONTDIR=/usr/share/fonts/truetype
 #export QT_DEBUG_PLUGINS=1
-python3 /usr/share/cileide/src/
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+export QT_IM_MODULE=qtvirtualkeyboard
+python3 $SCRIPT_DIR/src/
