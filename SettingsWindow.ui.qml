@@ -16,6 +16,7 @@ Item {
     id: item1
     width: Constants.panel_width
     height: Constants.height
+    property alias btn_settings_back: btn_settings_back
     // If enabled, prevents interaction with the text fields
     property bool handwritingInputPanelActive: false
 

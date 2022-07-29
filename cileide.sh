@@ -17,5 +17,6 @@ export QT_PLUGIN_PATH=/usr/lib/plugins
 export QT_QPA_FONTDIR=/usr/share/fonts/truetype
 #export QT_DEBUG_PLUGINS=1
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-export QT_IM_MODULE=qtvirtualkeyboard
+#export QT_IM_MODULE=qtvirtualkeyboard
+unset QT_IM_MODULE
 python3 $SCRIPT_DIR/src/

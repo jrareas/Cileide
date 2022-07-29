@@ -13,6 +13,8 @@ import Constants 1.0
 Item {
     width: Constants.panel_width
     height: Constants.height
+    property alias btn_settings_id: btn_settings_id
+    property alias image1: image1
     Rectangle {
         id: rect_main
         x: 0
@@ -64,6 +66,15 @@ Item {
                         height: 125
                         source: "src/pictures/time.png"
                         fillMode: Image.PreserveAspectFit
+                    }
+
+                    Connections {
+                        target: btn_settings_id
+                        onClicked: {
+                            SettingsWindow.visible = true
+                            MainPanel.visible = false
+                            console.log("clicked again")
+                        }
                     }
                 }
             }
